@@ -2,6 +2,8 @@ import { useState, Suspense, lazy } from "react";
 
 const StartScreen = lazy(() => import("./components/StartScreen/Startscreen"));
 const QuizBox = lazy(() => import("./components/QuizBox/QuizBox"));
+const ResultScreen = lazy(() => import("./components/ResultScreen/ResultScreen"));
+
 
 type Question = {
   question: string;
@@ -83,7 +85,10 @@ function App() {
         ) : score === null ? (
           <QuizBox questions={questions} onFinish={handleFinish} />
         ) : (
-          <div>SCHERMATA FINALE QUI (prossimo step)</div>
+          <ResultScreen score={score} onRestart={() => {
+            setScore(null);
+            setQuizStarted(false);
+          }} />
         )}
       </Suspense>
     </div>

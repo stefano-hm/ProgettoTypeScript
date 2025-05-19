@@ -21,7 +21,7 @@ const QuizBox: React.FC<QuizBoxProps> = ({ questions, onFinish }) => {
 
   const handleAnswer = (index: number) => {
     if (index === currentQuestion.correctIndex) {
-      setScore(prev => prev + 1);
+      setScore((prev) => prev + 1);
     }
 
     const nextIndex = currentQuestionIndex + 1;
