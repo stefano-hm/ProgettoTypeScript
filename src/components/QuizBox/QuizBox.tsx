@@ -1,4 +1,3 @@
-// src/components/QuizBox/QuizBox.tsx
 import React, { useState } from "react";
 import styles from "./QuizBox.module.css";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./ResultScreen.module.css";
-import { Helmet } from "react-helmet";
+import ShareButton from "../ShareButton/ShareButton";
 
 type ResultScreenProps = {
   score: number;
@@ -16,18 +16,9 @@ const getLevel = (score: number): string => {
 
 const ResultScreen: React.FC<ResultScreenProps> = ({ score, onRestart }) => {
   const level = getLevel(score);
-  const shareText = `Ho ottenuto ${score}/10 al quiz ambientale 🌍 - Livello: ${level}!`;
-
-  const handleShare = () => {
-    const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
-    window.open(tweetUrl, "_blank");
-  };
 
   return (
     <div className={styles.container}>
-      <Helmet>
-        <title>Risultato Quiz</title>
-      </Helmet>
       <h1 className={styles.title}>Il tuo risultato 🎉</h1>
       <p className={styles.score}>
         Hai totalizzato <strong>{score}/10</strong>
@@ -39,10 +30,8 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ score, onRestart }) => {
         <button className={styles.button} onClick={onRestart}>
           Ricomincia
         </button>
-        <button className={styles.button} onClick={handleShare}>
-          Condividi su X
-        </button>
       </div>
+      <ShareButton />
     </div>
   );
 };

@@ -1,0 +1,30 @@
+.container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.shareMainButton {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.fallbackButtons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.fallbackButtons a {
+  color: white;
+  background-color: #3b5998;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
