@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./QuizBox.module.css";
+import ProgressBar from "../ProgressBar/ProgressBar";
 
 type Question = {
   question: string;
@@ -33,9 +34,12 @@ const QuizBox: React.FC<QuizBoxProps> = ({ questions, onFinish }) => {
 
   return (
     <div className={styles.container}>
+      <ProgressBar current={currentQuestionIndex + 1} total={questions.length} />
+
       <h2 className={styles.question}>
         {currentQuestionIndex + 1}. {currentQuestion.question}
       </h2>
+
       <div className={styles.options}>
         {currentQuestion.options.map((option, idx) => (
           <button
