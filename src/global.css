@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --color-primary: #2c7a7b;
+  --color-secondary: #68d391;
+  --color-accent: #f6ad55;
+  --color-background: #f0fdf4;
+  --color-text: #1a202c;
+  --color-white: #ffffff;
+  --color-error: #e53e3e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: 1.6;
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+h1, h2, h3, h4 {
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}

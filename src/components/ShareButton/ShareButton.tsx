@@ -26,30 +26,34 @@ const ShareButton: React.FC = () => {
   return (
     <div className={styles.container}>
       <button className={styles.shareMainButton} onClick={handleShare}>
-        Condividi
+        📤 Condividi risultato
       </button>
+
       {showFallback && (
         <div className={styles.fallbackButtons}>
           <a
             href={`https://twitter.com/intent/tweet?text=${shareText}&url=${encodedUrl}`}
             target="_blank"
             rel="noopener noreferrer"
+            className={`${styles.fallbackLink} ${styles.twitter}`}
           >
-            Condividi su X
+            X
           </a>
           <a
             href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
             target="_blank"
             rel="noopener noreferrer"
+            className={`${styles.fallbackLink} ${styles.facebook}`}
           >
-            Condividi su Facebook
+            Facebook
           </a>
           <a
-            href={`https://www.instagram.com/`} // Instagram non supporta la condivisione diretta via URL
+            href="https://www.instagram.com/"
             target="_blank"
             rel="noopener noreferrer"
+            className={`${styles.fallbackLink} ${styles.instagram}`}
           >
-            Condividi su Instagram
+            Instagram
           </a>
         </div>
       )}

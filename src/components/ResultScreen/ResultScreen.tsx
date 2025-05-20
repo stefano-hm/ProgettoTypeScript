@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./ResultScreen.module.css";
 import ShareButton from "../ShareButton/ShareButton";
+import { Helmet } from "react-helmet";
 
 type ResultScreenProps = {
   score: number;
@@ -19,19 +20,26 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ score, onRestart }) => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Il tuo risultato 🎉</h1>
-      <p className={styles.score}>
-        Hai totalizzato <strong>{score}/10</strong>
-      </p>
-      <p className={styles.level}>
-        Livello raggiunto: <strong>{level}</strong>
-      </p>
-      <div className={styles.buttons}>
-        <button className={styles.button} onClick={onRestart}>
-          Ricomincia
-        </button>
+      <Helmet>
+        <title>Quiz Ambientale - Risultato</title>
+      </Helmet>
+
+      <div className={styles.card}>
+        <h1 className={styles.title}>Il tuo risultato 🎉</h1>
+        <p className={styles.score}>
+          Hai totalizzato <strong>{score}/10</strong>
+        </p>
+        <p className={styles.level}>
+          Livello raggiunto: <strong>{level}</strong>
+        </p>
+
+        <div className={styles.buttons}>
+          <button className={styles.button} onClick={onRestart}>
+            🔄 Ricomincia il quiz
+          </button>
+          <ShareButton />
+        </div>
       </div>
-      <ShareButton />
     </div>
   );
 };
