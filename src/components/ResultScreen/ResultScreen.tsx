@@ -25,7 +25,7 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ score, onRestart }) => {
       </Helmet>
 
       <div className={styles.card}>
-        <h1 className={styles.title}>Il tuo risultato 🎉</h1>
+        <h1 className={styles.title}>Il tuo risultato</h1>
         <p className={styles.score}>
           Hai totalizzato <strong>{score}/10</strong>
         </p>
@@ -35,7 +35,7 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ score, onRestart }) => {
 
         <div className={styles.buttons}>
           <button className={styles.button} onClick={onRestart}>
-            🔄 Ricomincia il quiz
+            Ricomincia il quiz
           </button>
           <ShareButton />
         </div>

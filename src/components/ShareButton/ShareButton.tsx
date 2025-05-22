@@ -26,7 +26,7 @@ const ShareButton: React.FC = () => {
   return (
     <div className={styles.container}>
       <button className={styles.shareMainButton} onClick={handleShare}>
-        📤 Condividi risultato
+        Condividi risultato
       </button>
 
       {showFallback && (

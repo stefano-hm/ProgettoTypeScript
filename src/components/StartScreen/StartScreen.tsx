@@ -13,7 +13,7 @@ const StartScreen: React.FC<StartScreenProps> = ({ onStart }) => {
         <title>Quiz Ambientale - Inizia</title>
       </Helmet>
       <div className={styles.content}>
-        <h1 className={styles.title}>Quiz Ambientale 🌍</h1>
+        <h1 className={styles.title}>Quiz Ambientale</h1>
         <p className={styles.description}>
           Metti alla prova le tue conoscenze sull’ambiente! Rispondi a 10 domande a risposta multipla e scopri il tuo livello. Al termine, condividi il risultato con i tuoi amici!
         </p>
