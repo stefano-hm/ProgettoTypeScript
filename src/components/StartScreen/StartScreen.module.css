@@ -1,10 +1,12 @@
 .container {
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+  backdrop-filter: blur(2px);
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 2rem;
-  background-color: #f0fdf4;
 }
 
 .content {

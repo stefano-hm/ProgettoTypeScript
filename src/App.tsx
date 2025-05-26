@@ -1,6 +1,8 @@
 import { useState, Suspense, lazy } from "react";
 import { questions } from "./data/questions";
 
+import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
+
 
 const StartScreen = lazy(() => import("./components/StartScreen/Startscreen"));
 const QuizBox = lazy(() => import("./components/QuizBox/QuizBox"));
@@ -21,7 +23,7 @@ function App() {
 
   return (
     <div>
-      <Suspense fallback={<div>Caricamento...</div>}>
+      <Suspense fallback={<LoadingScreen />}>
         {!quizStarted ? (
           <StartScreen onStart={handleStart} />
         ) : score === null ? (
