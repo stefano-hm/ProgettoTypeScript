@@ -8,12 +8,12 @@ const ShareButton: React.FC = () => {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: "Il mio punteggio al Quiz Ambientale",
-          text: "Guarda che punteggio ho fatto al quiz ambientale!",
+          title: "My score on the Environmental Quiz",
+          text: "Look at the score I got on the Environmental Quiz!",
           url: window.location.href,
         });
       } catch (error) {
-        console.error("Errore nella condivisione:", error);
+        console.error("Sharing error:", error);
       }
     } else {
       setShowFallback(true);
@@ -21,12 +21,12 @@ const ShareButton: React.FC = () => {
   };
 
   const encodedUrl = encodeURIComponent(window.location.href);
-  const shareText = encodeURIComponent("Guarda che punteggio ho fatto al quiz ambientale!");
+  const shareText = encodeURIComponent("Look at the score I got on the Environmental Quiz!");
 
   return (
     <div className={styles.container}>
       <button className={styles.shareMainButton} onClick={handleShare}>
-        Condividi risultato
+        Share result
       </button>
 
       {showFallback && (

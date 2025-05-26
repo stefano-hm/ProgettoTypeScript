@@ -9,10 +9,10 @@ type ResultScreenProps = {
 };
 
 const getLevel = (score: number): string => {
-  if (score <= 3) return "Base";
-  if (score <= 7) return "Intermedio";
-  if (score <= 9) return "Esperto/a";
-  return "Maestro/a";
+  if (score <= 3) return "Basic";
+  if (score <= 7) return "Intermediate";
+  if (score <= 9) return "Expert";
+  return "Master";
 };
 
 const ResultScreen: React.FC<ResultScreenProps> = ({ score, onRestart }) => {
@@ -21,21 +21,21 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ score, onRestart }) => {
   return (
     <div className={styles.container}>
       <Helmet>
-        <title>Quiz Ambientale - Risultato</title>
+        <title>Environmental Quiz - Results</title>
       </Helmet>
 
       <div className={styles.card}>
-        <h1 className={styles.title}>Il tuo risultato</h1>
+        <h1 className={styles.title}>Your result</h1>
         <p className={styles.score}>
-          Hai totalizzato <strong>{score}/10</strong>
+          You scored <strong>{score}/10</strong>
         </p>
         <p className={styles.level}>
-          Livello raggiunto: <strong>{level}</strong>
+          Level achieved: <strong>{level}</strong>
         </p>
 
         <div className={styles.buttons}>
           <button className={styles.button} onClick={onRestart}>
-            Ricomincia il quiz
+            Restart the quiz
           </button>
           <ShareButton />
         </div>

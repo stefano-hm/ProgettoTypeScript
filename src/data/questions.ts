@@ -6,53 +6,53 @@ export type Question = {
 
 export const questions: Question[] = [
   {
-    question: "Qual è la principale causa del cambiamento climatico?",
-    options: ["Eruzioni vulcaniche", "Emissioni di gas serra", "Ciclo solare", "Deforestazione naturale"],
+    question: "What is the main cause of climate change?",
+    options: ["Volcanic eruptions", "Greenhouse gas emissions", "Solar cycle", "Natural deforestation"],
     correctIndex: 1,
   },
   {
-    question: "Quale di questi materiali è riciclabile?",
-    options: ["Plastica", "Vetro", "Alluminio", "Tutti e tre"],
+    question: "Which of these materials is recyclable?",
+    options: ["Plastic", "Glass", "Aluminum", "All three"],
     correctIndex: 3,
   },
   {
-    question: "Quale gas è il più associato all'effetto serra?",
-    options: ["Azoto", "Ossigeno", "Anidride carbonica", "Elio"],
+    question: "Which gas is most associated with the greenhouse effect?",
+    options: ["Nitrogen", "Oxygen", "Carbon dioxide", "Helium"],
     correctIndex: 2,
   },
   {
-    question: "Cosa indica il termine biodiversità?",
-    options: ["La varietà di piante", "La varietà di animali", "La varietà degli esseri viventi", "Il numero di specie marine"],
+    question: "What does the term biodiversity refer to?",
+    options: ["The variety of plants", "The variety animals", "The variety of living organisms", "The number of marine species"],
     correctIndex: 2,
   },
   {
-    question: "Qual è la fonte di energia rinnovabile?",
-    options: ["Carbone", "Gas naturale", "Petrolio", "Sole"],
+    question: "Which one is a source of renewable energy?",
+    options: ["Coal", "Natural gas", "Oil", "Sun"],
     correctIndex: 3,
   },
   {
-    question: "Quale di questi comportamenti riduce l’inquinamento?",
-    options: ["Usare la bici", "Usare il condizionatore", "Comprare vestiti ogni settimana", "Tenere accese le luci tutto il giorno"],
+    question: "Which of these behaviors reduces pollution?",
+    options: ["Riding a bike", "Using the air conditioner", "Buying clothes every week", "Keeping the lights on all day"],
     correctIndex: 0,
   },
   {
-    question: "Qual è il simbolo internazionale del riciclo?",
-    options: ["Un albero", "Un cerchio verde", "Tre frecce a triangolo", "Un bidone verde"],
+    question: "What is the international symbol for recycling?",
+    options: ["A tree", "A green circle", "Three arrows forming a triangle", "A green trash bin"],
     correctIndex: 2,
   },
   {
-    question: "Quale impatto ha la deforestazione?",
-    options: ["Aumenta la biodiversità", "Riduce le emissioni", "Contribuisce al cambiamento climatico", "Migliora la qualità dell'aria"],
+    question: "What impact does deforestation have?",
+    options: ["Increases biodiversity", "Reduces emissions", "Contributes to climate change", "Improves air quality"],
     correctIndex: 2,
   },
   {
-    question: "Cos'è l’impronta ecologica?",
-    options: ["Un’impronta lasciata sulla terra", "L’impatto delle attività umane sull’ambiente", "Un’impronta di animale", "Una tecnica agricola"],
+    question: "What is the ecological footprint?",
+    options: ["A footprint left on the ground", "The impact of human activities on the environment", "An animal’s footprint", "An agricultural technique"],
     correctIndex: 1,
   },
   {
-    question: "Quale risorsa è scarsa e va risparmiata?",
-    options: ["Sabbia", "Acqua dolce", "Sale", "Aria"],
+    question: "Which resource is scarce and should be conserved?",
+    options: ["Sand", "Freshwater", "Salt", "Air"],
     correctIndex: 1,
   },
 ];
