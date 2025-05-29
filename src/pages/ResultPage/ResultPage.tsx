@@ -1,12 +1,8 @@
 import React from "react";
-import styles from "./ResultScreen.module.css";
-import ShareButton from "../ShareButton/ShareButton";
+import styles from "./ResultPage.module.css";
+import ShareButton from "../../components/ShareButton/ShareButton";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
-
-type ResultScreenProps = {
-  score: number;
-  onRestart: () => void;
-};
 
 const getLevel = (score: number): string => {
   if (score <= 3) return "Basic";
@@ -15,13 +11,26 @@ const getLevel = (score: number): string => {
   return "Master";
 };
 
-const ResultScreen: React.FC<ResultScreenProps> = ({ score, onRestart }) => {
+const ResultPage: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const score = location.state?.score;
+
+  if (typeof score !== "number") {
+    return (
+      <div className={styles.container}>
+        <h2>Oops! Score not found.</h2>
+        <button onClick={() => navigate("/")}>Back to Start</button>
+      </div>
+    );
+  }
+
   const level = getLevel(score);
 
   return (
     <div className={styles.container}>
       <Helmet>
-        <title>Environmental Quiz - Results</title>
+        <title>Environmental Quiz</title>
       </Helmet>
 
       <div className={styles.card}>
@@ -34,7 +43,7 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ score, onRestart }) => {
         </p>
 
         <div className={styles.buttons}>
-          <button className={styles.button} onClick={onRestart}>
+          <button className={styles.button} onClick={() => navigate("/")}>
             Restart the quiz
           </button>
           <ShareButton />
@@ -44,4 +53,4 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ score, onRestart }) => {
   );
 };
 
-export default ResultScreen;
+export default ResultPage;

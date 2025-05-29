@@ -1,41 +1,22 @@
-import { useState, Suspense, lazy } from "react";
-import { questions } from "./data/questions";
-
+import { Suspense, lazy } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
 
-
-const StartScreen = lazy(() => import("./components/StartScreen/Startscreen"));
-const QuizBox = lazy(() => import("./components/QuizBox/QuizBox"));
-const ResultScreen = lazy(() => import("./components/ResultScreen/ResultScreen"));
-
+const StartPage = lazy(() => import("./pages/StartPage/StartPage"));
+const QuizPage = lazy(() => import("./pages/QuizPage/QuizPage"));
+const ResultPage = lazy(() => import("./pages/ResultPage/ResultPage"));
 
 function App() {
-  const [quizStarted, setQuizStarted] = useState(false);
-  const [score, setScore] = useState<number | null>(null);
-
-  const handleStart = () => {
-    setQuizStarted(true);
-  };
-
-  const handleFinish = (finalScore: number) => {
-    setScore(finalScore);
-  };
-
   return (
-    <div>
+    <Router>
       <Suspense fallback={<LoadingScreen />}>
-        {!quizStarted ? (
-          <StartScreen onStart={handleStart} />
-        ) : score === null ? (
-          <QuizBox questions={questions} onFinish={handleFinish} />
-        ) : (
-          <ResultScreen score={score} onRestart={() => {
-            setScore(null);
-            setQuizStarted(false);
-          }} />
-        )}
+        <Routes>
+          <Route path="/" element={<StartPage />} />
+          <Route path="/quiz" element={<QuizPage />} />
+          <Route path="/result" element={<ResultPage />} />
+        </Routes>
       </Suspense>
-    </div>
+    </Router>
   );
 }
 

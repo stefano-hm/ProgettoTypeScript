@@ -1,40 +1,37 @@
 import React, { useState } from "react";
-import styles from "./QuizBox.module.css";
-import ProgressBar from "../ProgressBar/ProgressBar";
+import styles from "./QuizPage.module.css";
+import { useNavigate } from "react-router-dom";
+import ProgressBar from "../../components/ProgressBar/ProgressBar";
+import { questions } from "../../data/questions";
+import { Helmet } from "react-helmet";
 
-type Question = {
-  question: string;
-  options: string[];
-  correctIndex: number;
-};
 
-type QuizBoxProps = {
-  questions: Question[];
-  onFinish: (score: number) => void;
-};
-
-const QuizBox: React.FC<QuizBoxProps> = ({ questions, onFinish }) => {
+const QuizPage: React.FC = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
+  const navigate = useNavigate();
 
   const currentQuestion = questions[currentQuestionIndex];
 
   const handleAnswer = (index: number) => {
     const isCorrect = index === currentQuestion.correctIndex;
-    if (isCorrect) {
-      setScore((prev) => prev + 1);
-    }
+    const newScore = score + (isCorrect ? 1 : 0);
+    setScore(newScore);
 
     const nextIndex = currentQuestionIndex + 1;
     if (nextIndex < questions.length) {
       setCurrentQuestionIndex(nextIndex);
     } else {
-      onFinish(score + (isCorrect ? 1 : 0));
+      navigate("/result", { state: { score: newScore } });
     }
   };
 
   return (
     <div className={styles.container}>
+      <Helmet>
+        <title>Environmental Quiz</title>
+      </Helmet>
+
       <ProgressBar
         current={currentQuestionIndex + 1}
         total={questions.length}
@@ -61,4 +58,4 @@ const QuizBox: React.FC<QuizBoxProps> = ({ questions, onFinish }) => {
   );
 };
 
-export default QuizBox;
+export default QuizPage;
