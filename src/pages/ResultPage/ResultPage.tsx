@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./ResultPage.module.css";
-import ShareButton from "../../components/ShareButton/ShareButton";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import ShareButton from "../../components/ShareButton/ShareButton";
+import ResultCard from "../../components/ResultCard/ResultCard";
 
 const getLevel = (score: number): string => {
   if (score <= 3) return "Basic";
@@ -33,22 +34,12 @@ const ResultPage: React.FC = () => {
         <title>Environmental Quiz</title>
       </Helmet>
 
-      <div className={styles.card}>
-        <h1 className={styles.title}>Your result</h1>
-        <p className={styles.score}>
-          You scored <strong>{score}/10</strong>
-        </p>
-        <p className={styles.level}>
-          Level achieved: <strong>{level}</strong>
-        </p>
-
-        <div className={styles.buttons}>
-          <button className={styles.button} onClick={() => navigate("/")}>
-            Restart the quiz
-          </button>
-          <ShareButton />
-        </div>
-      </div>
+      <ResultCard
+        score={score}
+        level={level}
+        onRestart={() => navigate("/")}
+        shareButton={<ShareButton />}
+      />
     </div>
   );
 };

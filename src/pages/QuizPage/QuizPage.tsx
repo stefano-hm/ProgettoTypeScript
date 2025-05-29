@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import styles from "./QuizPage.module.css";
 import { useNavigate } from "react-router-dom";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
+import QuestionCard from "../../components/QuestionCard/QuestionCard";
 import { questions } from "../../data/questions";
 import { Helmet } from "react-helmet";
-
 
 const QuizPage: React.FC = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -37,23 +37,12 @@ const QuizPage: React.FC = () => {
         total={questions.length}
       />
 
-      <div className={styles.content}>
-        <h2 className={styles.question}>
-          {currentQuestionIndex + 1}. {currentQuestion.question}
-        </h2>
-
-        <div className={styles.options}>
-          {currentQuestion.options.map((option, idx) => (
-            <button
-              key={idx}
-              className={styles.optionButton}
-              onClick={() => handleAnswer(idx)}
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-      </div>
+      <QuestionCard
+        question={currentQuestion.question}
+        options={currentQuestion.options}
+        questionNumber={currentQuestionIndex + 1}
+        onSelect={handleAnswer}
+      />
     </div>
   );
 };
