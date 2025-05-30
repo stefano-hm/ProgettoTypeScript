@@ -24,7 +24,7 @@ const ShareButton: React.FC = () => {
   const shareText = encodeURIComponent("Look at the score I got on the Environmental Quiz!");
 
   return (
-    <div className={styles.container}>
+    <div className={styles.shareContainer}>
       <button className={styles.shareMainButton} onClick={handleShare}>
         Share result
       </button>

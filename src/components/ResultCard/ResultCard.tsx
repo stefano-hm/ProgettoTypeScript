@@ -10,8 +10,8 @@ interface ResultCardProps {
 
 const ResultCard: React.FC<ResultCardProps> = ({ score, level, onRestart, shareButton }) => {
   return (
-    <div className={styles.card}>
-      <h1 className={styles.title}>Your result</h1>
+    <div className={styles.resultContainer}>
+      <h1 className={styles.resultTitle}>Your result</h1>
       <p className={styles.score}>
         You scored <strong>{score}/10</strong>
       </p>

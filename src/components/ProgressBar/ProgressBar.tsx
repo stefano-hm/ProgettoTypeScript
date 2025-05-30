@@ -11,12 +11,12 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ current, total }) => {
 
   return (
     <div
-      className={styles.container}
+      className={styles.progressBar}
       role="progressbar"
       aria-valuenow={current}
       aria-valuemin={0}
       aria-valuemax={total}
-      aria-label={`Domanda ${current} di ${total}`}
+      aria-label={`Question ${current} of ${total}`}
     >
       <div className={styles.filler} style={{ width: `${percentage}%` }} />
     </div>

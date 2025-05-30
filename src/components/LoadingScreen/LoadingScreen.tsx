@@ -1,10 +1,11 @@
+import React from "react";
 import styles from "./LoadingScreen.module.css"; 
 
-const LoadingScreen = () => {
+const LoadingScreen: React.FC = () => {
   return (
     <div className={styles.loadingScreen}>
       <div className={styles.spinner} />
-      <p>Loading...</p>
+      <p className={styles.text}>Loading...</p>
     </div>
   );
 };
