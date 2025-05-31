@@ -56,3 +56,24 @@
     transform: translateY(0);
   }
 }
+
+@media (max-width: 600px) {
+  .startContent {
+    padding: 2rem 1.25rem;
+    border-radius: 16px;
+  }
+
+  .startTitle {
+    font-size: 2rem;
+  }
+
+  .startDescription {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .startButton {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+}

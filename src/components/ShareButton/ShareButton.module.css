@@ -61,3 +61,10 @@
     #285aeb 90%
   );
 }
+
+@media (max-width: 600px) {
+  .shareMainButton {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+}

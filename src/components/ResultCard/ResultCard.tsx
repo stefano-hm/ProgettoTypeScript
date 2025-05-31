@@ -8,7 +8,12 @@ interface ResultCardProps {
   shareButton: React.ReactNode;
 }
 
-const ResultCard: React.FC<ResultCardProps> = ({ score, level, onRestart, shareButton }) => {
+const ResultCard: React.FC<ResultCardProps> = ({
+  score,
+  level,
+  onRestart,
+  shareButton,
+}) => {
   return (
     <div className={styles.resultContainer}>
       <h1 className={styles.resultTitle}>Your result</h1>

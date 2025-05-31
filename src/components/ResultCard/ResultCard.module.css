@@ -69,3 +69,25 @@
     transform: translateY(0);
   }
 }
+
+@media (max-width: 600px) {
+  .resultContainer {
+    padding: 2rem 1.25rem;
+    border-radius: 16px;
+  }
+
+  .resultTitle {
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .score,
+  .level {
+    font-size: 1rem;
+  }
+
+  .button {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+}

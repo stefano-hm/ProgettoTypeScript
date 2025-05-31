@@ -21,7 +21,9 @@ const ShareButton: React.FC = () => {
   };
 
   const encodedUrl = encodeURIComponent(window.location.href);
-  const shareText = encodeURIComponent("Look at the score I got on the Environmental Quiz!");
+  const shareText = encodeURIComponent(
+    "Look at the score I got on the Environmental Quiz!"
+  );
 
   return (
     <div className={styles.shareContainer}>
