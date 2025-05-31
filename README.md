@@ -45,8 +45,8 @@ The application will be available at http://localhost:5173.
 
 The project is structured as follows:
 
-```bash
-   meditation-app/
+   ```bash
+   quizTs/
 ├── index.html
 ├── package.json
 ├── public/
@@ -59,43 +59,43 @@ The project is structured as follows:
 │   │   ├── favicon.ico
 │   │   └── site.webmanifest
 │   ├── images/
-│   │   └── logo.PNG
-│   └── sounds/
-│       ├── forest.mp3
-│       ├── nature.mp3
-│       ├── ocean.mp3
-│       └── rain.mp3
+│       └── og-image.png
 ├── src/
-│   ├── App.jsx
-│   ├── main.jsx
+│   ├── App.tsx
+│   ├── main.tsx
 │   ├── components/
-│   │   ├── BackgroundAudio.jsx
-│   │   ├── BackgroundImage.jsx
-│   │   ├── Footer.jsx
-│   │   ├── Header.jsx
-│   │   ├── MeditatioQuotes.jsx
-│   │   └── Timer.jsx
+│   │   ├── LoadingScreen/
+│   │   │   ├── LoadingScreen.tsx
+│   │   │   └── LoadingCreen.module.css
+│   │   ├── ProgressBar/
+│   │   │   ├── ProgressBar.tsx
+│   │   │   └── ProgressBar.module.css
+│   │   ├── QuestionCard/
+│   │   │   ├── QuestionCard.tsx
+│   │   │   └── QuestionCard.module.css
+│   │   ├── ResultCard/
+│   │   │   ├── ResultCard.tsx
+│   │   │   └── Resultcard.module.css
+│   │   ├── ShareButton/
+│   │   │   ├── ShareButton.tsx
+│   │   │   └── ShareButton.module.css
+│   │   └── StartCard/
+│   │       ├── StartCard.tsx
+│   │       └── Startcard.module.css
 │   ├── pages/
-│   │   ├── About.jsx
-│   │   ├── Guide.jsx
-│   │   └── Home.jsx
-│   ├── store/
-│   │   ├── index.js
-│   │   └── slices/
-│   │       └── timerSlice.js
+│   │   ├── QuizPage/
+│   │   │   ├── QuizPage.tsx
+│   │   │   └── Quizpage.module.css
+│   │   ├── ResultPage/
+│   │   │   ├── ResultPage.tsx
+│   │   │   └── ResultPage.module.css
+│   │   └── StartPage/
+│   │   │   ├── StartPage.tsx
+│   │   │   └── StartPage.module.css
+│   ├── data/
+│   │   └── questions.ts
 │   └── styles/
-│       ├── about-media.css
-│       ├── About.css
-│       ├── BackgroundImage.css
-│       ├── Footer.css
-│       ├── global.css
-│       ├── guide-media.css
-│       ├── Guide.css
-│       ├── Header.css
-│       ├── home-media.css
-│       ├── Logo.css
-│       ├── MeditationQuotes.css
-│       └── Timer.css
+│       └── global.css
 
    ```
 
