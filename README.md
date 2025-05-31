@@ -101,7 +101,7 @@ The project is structured as follows:
 
 ## Preview
 
-Check out the deployed version: https://eco-quiz.netlify.app
+Check out the deployed version: https://environmental-quiz.netlify.app
 
 ## Contributing
 
